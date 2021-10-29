@@ -1,7 +1,7 @@
 stage('Create') {
     node('master') { 
         sh: 'echo "This is my message !" > file';
-        stash name: 'stash1', includes: 'file';
+        stash includes: 'file', name: 'stash1'
     }
 }
 stage('Print') {
