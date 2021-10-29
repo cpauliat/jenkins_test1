@@ -1,6 +1,6 @@
 node {
     stage('Clone GIT') { 
-        git branch: 'main', url: 'https://github.com/cpauliat/maven-simple.git'
+        git branch: 'master', url: 'https://github.com/cpauliat/maven-simple.git'
     }
     stage('Build with MAVEN') {
         sh 'mvn package'
