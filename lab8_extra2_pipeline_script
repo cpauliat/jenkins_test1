@@ -4,7 +4,7 @@ node {
         parallel(
           a: {
               sh: 'echo JOB A $BUILD_NUMBER on $NODE_NAME'
-          }
+          },
           b: {
               sh: 'date ; echo JOB B $NODE_NAME'
           }
