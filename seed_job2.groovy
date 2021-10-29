@@ -4,7 +4,7 @@ job('simpleJobWithParameter') {
   }
   
   steps {
-    shell('echo $JOB_NAME $BUILD_NUMBER')
+    shell('echo cpauliat $JOB_NAME $BUILD_NUMBER')
     shell('echo $Object')
   }
 }
