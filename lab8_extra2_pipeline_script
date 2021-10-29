@@ -3,10 +3,10 @@ node {
       steps {
         parallel(
           a: {
-              sh: 'echo $BUILD_NUMBER'
+              sh: 'echo JOB A $BUILD_NUMBER on $NODE_NAME'
           }
           b: {
-              sh: 'date'
+              sh: 'date ; echo JOB B $NODE_NAME'
           }
         )
     }
