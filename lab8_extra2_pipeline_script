@@ -3,10 +3,10 @@ node {
       steps {
         parallel(
           a: {
-              echo $BUILD_NUMBER'
+              sh: 'echo $BUILD_NUMBER'
           }
           b: {
-              date
+              sh: 'date'
           }
         )
     }
