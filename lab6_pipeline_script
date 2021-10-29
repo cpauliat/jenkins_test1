@@ -1,0 +1,8 @@
+node {
+    stage('Clone GIT') { 
+        git branch: 'main', url: 'https://github.com/cpauliat/jenkins_test1.git'
+    }
+    stage('Print content') {
+        sh 'cat seed_job2.groovy'
+    }
+}
