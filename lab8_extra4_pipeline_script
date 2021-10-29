@@ -1,6 +1,6 @@
 stage('Create') {
     node('master') { 
-        sh: 'echo "This is my message !" > file';
+        sh: 'echo TOTO > file';
         sh: 'echo CREATE';
         // stash includes: 'file', name: 'stash1'
     }
