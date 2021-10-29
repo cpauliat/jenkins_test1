@@ -7,6 +7,6 @@ node {
     }
     stage('Send email') {
         //mail bcc: '', body: '''The build of Jenkinks pipeline is completed ! it was successful''', cc: '', from: '', replyTo: '', subject: 'Jenkins pipeline completed', to: 'christophe.pauliat@oracle.com'
-        emailext body: 'pipeline completed ok', subject: 'test lab6', to: 'christophe.pauliat@oracle.com'
+        emailext body: 'pipeline completed ok', subject: 'test lab6', to: 'cpauliat@gmail.com'
     }
 }
