@@ -2,12 +2,12 @@ stage('Run') {
     parallel(
         a: {
               node('master') { 
-                  sh: 'echo $BUILD_NUMBER'; 
+                  sh: 'echo $BUILD_NUMBER $NODE_NAME'; 
               }
         },
         b: {
               node('slave1_jenkins-06-02') { 
-                  sh: 'date'; 
+                  sh: 'echo $(date) $NODE_NAME'; 
               }
         }
     )
