@@ -2,7 +2,7 @@ stage('Create') {
     node('master') { 
         sh: 'echo Running on $NODE_NAME';
         sh: 'echo "This is my message !" > file';
-        stash name: 'stash1', includes: '*';
+        stash name: 'stash1', includes: 'file';
     }
 }
 stage('Print') {
