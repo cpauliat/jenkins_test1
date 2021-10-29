@@ -1,0 +1,12 @@
+stage('Create') {
+    node('master') { 
+        sh: 'echo "This is my message !" > file';
+        stash 'build';
+    }
+}
+stage('Print') {
+    node('slave1_jenkins-06-02') { 
+        unstash 'build'
+        sh: 'cat file';
+    }
+}
