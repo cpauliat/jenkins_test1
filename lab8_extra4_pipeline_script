@@ -1,13 +1,11 @@
 stage('Create') {
     node('master') { 
-        sh: 'echo Running on $NODE_NAME';
         sh: 'echo "This is my message !" > file';
         stash name: 'stash1', includes: 'file';
     }
 }
 stage('Print') {
     node('slave1_jenkins-06-02') { 
-        sh: 'echo Running on $NODE_NAME';
         unstash 'stash1'
         sh: 'cat file';
     }
