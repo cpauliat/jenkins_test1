@@ -2,7 +2,10 @@ node {
     stage('Clone GIT') { 
         git branch: 'main', url: 'https://github.com/cpauliat/jenkins_test1.git'
     }
-    stage('Print content') {
-        sh 'cat seed_job2.groovy'
+    stage('List files') {
+        sh 'ls -l'
+    }
+    stage('Send email') {
+        mail bcc: '', body: '''The build of Jenkinks pipeline is completed ! it was successful''', cc: '', from: '', replyTo: '', subject: 'Jenkins pipeline completed', to: 'christophe.pauliat@oracle.com'
     }
 }
