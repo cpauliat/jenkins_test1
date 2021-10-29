@@ -1,12 +1,14 @@
 stage('Create') {
     node('master') { 
         sh: 'echo "This is my message !" > file';
-        stash includes: 'file', name: 'stash1'
+        sh: 'echo CREATE';
+        // stash includes: 'file', name: 'stash1'
     }
 }
 stage('Print') {
     node('slave1_jenkins-06-02') { 
-        unstash 'stash1'
-        sh: 'cat file';
+        //unstash 'stash1'
+        //sh: 'cat file';
+        sh: 'echo PRINT';
     }
 }
