@@ -1,13 +1,15 @@
-node {
-    stage('2 parallel tasks') {
-      steps {
-        parallel(
-          a: {
-              sh: 'echo JOB A $BUILD_NUMBER on $NODE_NAME'
-          },
-          b: {
-              sh: 'date ; echo JOB B $NODE_NAME'
-          }
-        )
-    }
+stage('Run') {
+    parallel(
+        a: {
+              node('master') { 
+                  sh: 'echo JOB A $BUILD_NUMBER on $NODE_NAME'; 
+              }
+        },
+        b: {
+              node('slave1_jenkins-06-02') { 
+                  sh: 'date; echo JOB B on $NODE_NAME'; 
+              }
+        }
+    )
 }
+
